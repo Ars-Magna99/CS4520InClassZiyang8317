@@ -1,3 +1,7 @@
+/*
+ * CS5520 In-class Assignment 1
+ * Name: Ziyang Wang
+ */
 package com.example.cs4520_inclass_ziyang8317;
 
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">CS4520_InClass_Ziyang8317</string>
+    <string name="BMI_Title">Body Mass Index(BMI)</string>
+    <string name="inclass01_button">InClass01</string>
+    <string name="weight_Title">Weight</string>
+    <string name="weight_Reminder">Your weight in pounds</string>
+    <string name="weight_unit">lb</string>
+    <string name="height_Title">Height</string>
+    <string name="feet_hint">Enter feet here</string>
+    <string name="inch_hint">Enter inches here</string>
+    <string name="feet_unit">feet</string>
+    <string name="inches_unit">inches</string>
+    <string name="button_calculate">Calculate BMI</string>
+    <string name="text_result">Click on Calculate BMI to find your BMI</string>
 </resources>
