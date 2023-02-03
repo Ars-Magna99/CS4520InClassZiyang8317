@@ -12,4 +12,16 @@
     <string name="inches_unit">inches</string>
     <string name="button_calculate">Calculate BMI</string>
     <string name="text_result">Click on Calculate BMI to find your BMI</string>
+    <string name="button_inclass2">INCLASS02</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="I_Use">I use</string>
+    <string name="radioButton_Android">Android</string>
+    <string name="radioButton_iOS">iOS</string>
+    <string name="mood_reminder">Your current mood:</string>
+    <string name="button_submit">Submit</string>
+    <string name="mood_result">Angry</string>
+    <string name="select_avatar_reminder">Select your Avatar</string>
+    <string name="Name_Tag">Name:</string>
+    <string name="Email_Tag">Email:</string>
 </resources>

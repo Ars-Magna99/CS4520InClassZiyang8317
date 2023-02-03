@@ -15,6 +15,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button buttonPractice;
     private Button buttonInClass01;
+    private Button buttonInClass02;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +39,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(toInClass01);
             }
         });
+
+        buttonInClass02 = findViewById(R.id.button_class2);
+        buttonInClass02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toInClass02 = new Intent(MainActivity.this,InClass02.class);
+                startActivity(toInClass02);
+            }
+        });
+
+
     }
 }
