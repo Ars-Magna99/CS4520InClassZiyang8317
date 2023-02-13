@@ -34,14 +34,14 @@ public class DisplayProfile extends AppCompatActivity {
 
 
         // match elements
-        user_name = findViewById(R.id.Actual_Name);
-        avatar_top = findViewById(R.id.avatar_image);
-        email = findViewById(R.id.Actual_Email);
-        phone_type = findViewById(R.id.Phone_Type);
-        mood_type = findViewById(R.id.Mood_Type);
-        emoji = findViewById(R.id.mood_emoji);
-        name_tag = findViewById(R.id.Name_Tag);
-        email_tag = findViewById(R.id.Email_Tag);
+        user_name = findViewById(R.id.Actual_Name_frag);
+        avatar_top = findViewById(R.id.avatar_image_frag);
+        email = findViewById(R.id.Actual_Email_frag);
+        phone_type = findViewById(R.id.Phone_Type_frag);
+        mood_type = findViewById(R.id.Mood_Type_frag);
+        emoji = findViewById(R.id.mood_emoji_frag);
+        name_tag = findViewById(R.id.Name_Tag_frag);
+        email_tag = findViewById(R.id.Email_Tag_frag);
         // change the font
         name_tag.setTypeface(null, Typeface.BOLD);
         name_tag.setTextColor(Color.BLACK);

@@ -7,7 +7,7 @@
     tools:context=".InClass02">
 
     <EditText
-        android:id="@+id/Name_enter"
+        android:id="@+id/Name_enter_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Email_Enter"
+        android:id="@+id/Email_Enter_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,61 +28,61 @@
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name_enter" />
+        app:layout_constraintTop_toBottomOf="@+id/Name_enter_Fragment" />
 
     <ImageView
-        android:id="@+id/SelectAvatar"
+        android:id="@+id/SelectAvatar_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email_Enter"
+        app:layout_constraintTop_toBottomOf="@+id/Email_Enter_Fragment"
         app:srcCompat="@drawable/select_avatar" />
 
     <TextView
-        android:id="@+id/IUse"
+        android:id="@+id/IUse_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/I_Use"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SelectAvatar" />
+        app:layout_constraintTop_toBottomOf="@+id/SelectAvatar_Fragment" />
 
     <RadioGroup
-        android:id="@+id/radioGroup_phone"
+        android:id="@+id/radioGroup_phone_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IUse">
+        app:layout_constraintTop_toBottomOf="@+id/IUse_Fragment">
 
         <RadioButton
-            android:id="@+id/radioButton_Android"
+            android:id="@+id/radioButton_Android_Fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/radioButton_Android" />
 
         <RadioButton
-            android:id="@+id/radioButton_iOS"
+            android:id="@+id/radioButton_iOS_Fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/radioButton_iOS" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/mood_reminder"
+        android:id="@+id/mood_reminder_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="@string/mood_reminder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup_phone_Fragment" />
 
     <SeekBar
-        android:id="@+id/seekBar_mood"
+        android:id="@+id/seekBar_mood_Fragment"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -91,35 +91,35 @@
         android:max="3"
         android:progress="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mood_reminder" />
+        app:layout_constraintTop_toBottomOf="@+id/mood_reminder_Fragment" />
 
     <ImageView
-        android:id="@+id/image_mood"
+        android:id="@+id/image_mood_Fragment"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/seekBar_mood"
-        app:layout_constraintTop_toBottomOf="@+id/mood_reminder"
+        app:layout_constraintStart_toEndOf="@+id/seekBar_mood_Fragment"
+        app:layout_constraintTop_toBottomOf="@+id/mood_reminder_Fragment"
         app:srcCompat="@drawable/angry" />
 
     <Button
-        android:id="@+id/button_submit"
+        android:id="@+id/button_submit_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/button_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar_mood" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_mood_Fragment" />
 
     <TextView
-        android:id="@+id/mood_result"
+        android:id="@+id/mood_result_Fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="@string/mood_result"
-        app:layout_constraintStart_toEndOf="@+id/mood_reminder"
-        app:layout_constraintTop_toTopOf="@+id/mood_reminder" />
+        app:layout_constraintStart_toEndOf="@+id/mood_reminder_Fragment"
+        app:layout_constraintTop_toTopOf="@+id/mood_reminder_Fragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,4 +33,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_class1" />
+
+    <Button
+        android:id="@+id/button_class3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INCLASS03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_class2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

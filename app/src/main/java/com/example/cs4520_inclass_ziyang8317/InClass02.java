@@ -15,9 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -81,18 +79,18 @@ public class InClass02 extends AppCompatActivity {
         setTitle("Edit Profile Activity");
 
         //match the element of showing the mood.
-        IUse = findViewById(R.id.IUse);
+        IUse = findViewById(R.id.IUse_Fragment);
         IUse.setTypeface(null,Typeface.BOLD);
         IUse.setTextColor(Color.BLACK);
         IUse.setTextSize(20);
 
 
-        mood_reminder = findViewById(R.id.mood_reminder);
+        mood_reminder = findViewById(R.id.mood_reminder_Fragment);
         mood_reminder.setTypeface(null,Typeface.BOLD);
         mood_reminder.setTextColor(Color.BLACK);
         mood_reminder.setTextSize(20);
 
-        mood_result = findViewById(R.id.mood_result);
+        mood_result = findViewById(R.id.mood_result_Fragment);
         mood_result.setTypeface(null, Typeface.BOLD);
         mood_result.setTextColor(Color.BLACK);
         mood_result.setTextSize(20);
@@ -102,7 +100,7 @@ public class InClass02 extends AppCompatActivity {
 
 
         //match the element of selecting the avatar image
-        select_avatar = findViewById(R.id.SelectAvatar);
+        select_avatar = findViewById(R.id.SelectAvatar_Fragment);
         select_avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,8 +110,8 @@ public class InClass02 extends AppCompatActivity {
             }
         });
 
-        seekBar_mood = findViewById(R.id.seekBar_mood);
-        image_mood = findViewById(R.id.image_mood);
+        seekBar_mood = findViewById(R.id.seekBar_mood_Fragment);
+        image_mood = findViewById(R.id.image_mood_Fragment);
         seekBar_mood.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -150,10 +148,10 @@ public class InClass02 extends AppCompatActivity {
         }**/
 
         // receive the data from other fields
-        name = findViewById(R.id.Name_enter);
-        email = findViewById(R.id.Email_Enter);
-        phone_type = findViewById(R.id.radioGroup_phone);
-        submit = findViewById(R.id.button_submit);
+        name = findViewById(R.id.Name_enter_Fragment);
+        email = findViewById(R.id.Email_Enter_Fragment);
+        phone_type = findViewById(R.id.radioGroup_phone_Fragment);
+        submit = findViewById(R.id.button_submit_Fragment);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

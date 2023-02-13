@@ -24,4 +24,6 @@
     <string name="select_avatar_reminder">Select your Avatar</string>
     <string name="Name_Tag">Name:</string>
     <string name="Email_Tag">Email:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -36,13 +36,13 @@ public class SelectAvatar extends AppCompatActivity {
         setTitle("Select Avatar");
 
         // change the font of reminder
-        reminder = findViewById(R.id.select_avatar_reminder);
+        reminder = findViewById(R.id.select_avatar_reminder_frag);
         reminder.setTypeface(null, Typeface.BOLD);
         reminder.setTextColor(Color.BLACK);
         reminder.setTextSize(20);
 
         // set the onclick listener for image buttons.
-        avatar_f1 = findViewById(R.id.avatar_f1);
+        avatar_f1 = findViewById(R.id.avatar_f1_frag);
         avatar_f1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +54,7 @@ public class SelectAvatar extends AppCompatActivity {
             }
         });
 
-        avatar_f2 = findViewById(R.id.avatar_f2);
+        avatar_f2 = findViewById(R.id.avatar_f2_frag);
         avatar_f2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +66,7 @@ public class SelectAvatar extends AppCompatActivity {
             }
         });
 
-        avatar_f3 = findViewById(R.id.avatar_f3);
+        avatar_f3 = findViewById(R.id.avatar_f3_frag);
         avatar_f3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +78,7 @@ public class SelectAvatar extends AppCompatActivity {
             }
         });
 
-        avatar_m1 = findViewById(R.id.avatar_m1);
+        avatar_m1 = findViewById(R.id.avatar_m1_frag);
         avatar_m1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +89,7 @@ public class SelectAvatar extends AppCompatActivity {
             }
         });
 
-        avatar_m2 = findViewById(R.id.avatar_m2);
+        avatar_m2 = findViewById(R.id.avatar_m2_frag);
         avatar_m2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,7 +101,7 @@ public class SelectAvatar extends AppCompatActivity {
             }
         });
 
-        avatar_m3 = findViewById(R.id.avatar_m3);
+        avatar_m3 = findViewById(R.id.avatar_m3_frag);
         avatar_m3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +112,7 @@ public class SelectAvatar extends AppCompatActivity {
 
             }
         });
+
 
 
 

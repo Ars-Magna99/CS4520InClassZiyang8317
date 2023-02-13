@@ -60,4 +60,15 @@ public class Profile implements Parcelable {
         parcel.writeInt(avatar_id);
 
     }
+
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone_type='" + phone_type + '\'' +
+                ", mood='" + mood + '\'' +
+                ", avatar_id=" + avatar_id +
+                '}';
+    }
 }
