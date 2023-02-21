@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonInClass02;
 
     private Button buttonInClass03;
+    private Button buttonInClass04;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent toInClass03 = new Intent(MainActivity.this,InClass03.class);
                 startActivity(toInClass03);
+            }
+        });
+
+        buttonInClass04 = findViewById(R.id.button_class4);
+        buttonInClass04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toClass04 = new Intent(MainActivity.this,InClass04.class);
+                startActivity(toClass04);
             }
         });
 

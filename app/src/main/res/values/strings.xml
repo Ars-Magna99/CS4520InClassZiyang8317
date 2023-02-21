@@ -26,4 +26,11 @@
     <string name="Email_Tag">Email:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_class4">InClass04</string>
+    <string name="selectComplexityReminder">Select Complexity:</string>
+    <string name="minimumTitle">Minimum:</string>
+    <string name="maximumReminder">Maximum:</string>
+    <string name="averageTitle">Average:</string>
+    <string name="buttonGenerateNum">Generate Number</string>
+    <string name="selectedComplexity">1 times</string>
 </resources>
