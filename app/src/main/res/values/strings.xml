@@ -33,4 +33,6 @@
     <string name="averageTitle">Average:</string>
     <string name="buttonGenerateNum">Generate Number</string>
     <string name="selectedComplexity">1 times</string>
+    <string name="keyword_hint">Search Keyword</string>
+    <string name="buttonGoText">Go</string>
 </resources>
