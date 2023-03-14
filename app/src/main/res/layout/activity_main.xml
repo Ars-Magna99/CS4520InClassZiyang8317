@@ -61,4 +61,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_class4" />
 
+    <Button
+        android:id="@+id/button_Class6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="InClass06"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_class5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
