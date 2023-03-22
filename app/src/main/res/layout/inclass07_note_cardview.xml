@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E8E7E7">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:contentPadding="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/InClass07_notes_user_id_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="User ID:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/InClass07_notes_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="123"
+                app:layout_constraintStart_toEndOf="@+id/InClass07_notes_user_id_reminder"
+                app:layout_constraintTop_toTopOf="@+id/InClass07_notes_user_id_reminder" />
+
+            <TextView
+                android:id="@+id/InClass07_notes_note_id_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Note ID："
+                app:layout_constraintStart_toStartOf="@+id/InClass07_notes_user_id_reminder"
+                app:layout_constraintTop_toBottomOf="@+id/InClass07_notes_user_id_reminder" />
+
+            <TextView
+                android:id="@+id/InClass07_notes_note_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="456"
+                app:layout_constraintStart_toEndOf="@+id/InClass07_notes_note_id_reminder"
+                app:layout_constraintTop_toTopOf="@+id/InClass07_notes_note_id_reminder" />
+
+            <Button
+                android:id="@+id/InClass07_notes_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="DELETE"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/InClass07_notes_note_id"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/InClass07_notes_note_text_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Note:"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/InClass07_notes_note_id_reminder"
+                app:layout_constraintTop_toBottomOf="@+id/InClass07_notes_note_id_reminder" />
+
+            <TextView
+                android:id="@+id/InClass07_notes_note_text"
+                android:singleLine="false"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/InClass07_notes_note_text_reminder"
+                app:layout_constraintTop_toTopOf="@+id/InClass07_notes_note_text_reminder" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

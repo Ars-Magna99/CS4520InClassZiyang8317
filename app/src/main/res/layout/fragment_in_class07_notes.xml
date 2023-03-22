@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".InClass07NotesFragment">
+
+    <TextView
+        android:id="@+id/InClass07_Note_email_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Email:"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/InClass07_note_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/InClass07_Note_email_reminder"
+        app:layout_constraintTop_toTopOf="@+id/InClass07_Note_email_reminder" />
+
+    <TextView
+        android:id="@+id/InClass07_Note_name_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="User Name:"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/InClass07_Note_email_reminder"
+        app:layout_constraintTop_toBottomOf="@+id/InClass07_Note_email_reminder" />
+
+    <TextView
+        android:id="@+id/InClass07_note_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/InClass07_Note_name_reminder"
+        app:layout_constraintTop_toTopOf="@+id/InClass07_Note_name_reminder" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/darker_gray"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/InClass07_Note_name_reminder"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/InClass07_Logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Log out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/InClass07_note_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/InClass07_notes_enter"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Enter new note here:"
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InClass07_note_name" />
+
+    <Button
+        android:id="@+id/InClass07_postNote_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="Post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/InClass07_notes_enter"
+        app:layout_constraintTop_toTopOf="@+id/InClass07_notes_enter" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/InClass07_notes_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#E8E7E7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InClass07_notes_enter" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="ID:"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/InClass07_note_userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

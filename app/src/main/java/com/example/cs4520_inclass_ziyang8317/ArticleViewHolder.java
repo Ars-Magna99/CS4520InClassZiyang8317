@@ -1,3 +1,8 @@
+/*
+ * CS5520 In class assignment 06
+ * Name: Ziyang Wang
+ * Date: 2023-03-13
+ * */
 package com.example.cs4520_inclass_ziyang8317;
 
 import android.view.View;
