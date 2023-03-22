@@ -1,3 +1,8 @@
+/*
+ * CS5520 In class assignment 07
+ * Name: Ziyang Wang
+ * Date: 2023-03-20
+ * */
 package com.example.cs4520_inclass_ziyang8317;
 
 import android.os.Bundle;
@@ -139,7 +144,6 @@ public class InClass07LoginFragment extends Fragment {
                                 getActivity().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Log.d(TAG, "login success: "+token);
                                         Toast.makeText(getActivity(),"Login successful!",Toast.LENGTH_SHORT).show();
                                     }
                                 });

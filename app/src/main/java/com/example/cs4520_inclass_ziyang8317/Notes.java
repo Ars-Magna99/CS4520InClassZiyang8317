@@ -1,3 +1,10 @@
+/*
+ * CS5520 In class assignment 07
+ * Name: Ziyang Wang
+ * Date: 2023-03-20
+ * */
+
+
 package com.example.cs4520_inclass_ziyang8317;
 
 import java.util.ArrayList;

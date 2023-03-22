@@ -1,3 +1,8 @@
+/*
+ * CS5520 In class assignment 07
+ * Name: Ziyang Wang
+ * Date: 2023-03-20
+ * */
 package com.example.cs4520_inclass_ziyang8317;
 
 import android.app.Activity;
@@ -87,7 +92,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder>{
                         @Override
                         public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                             if(response.isSuccessful()){
-                                Log.d(TAG, "Delete clicked on: "+ notes.get(holder.getAdapterPosition()).toString());
                                 notes.remove(holder.getAdapterPosition());
                                 t.runOnUiThread(new Runnable() {
                                     @Override
