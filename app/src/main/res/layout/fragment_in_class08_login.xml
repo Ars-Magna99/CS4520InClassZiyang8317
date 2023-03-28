@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLogin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context= ".InClass08LoginFragment">
+
+    <EditText
+        android:id="@+id/InClass08_enter_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#00E5FF"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/InClass08_enter_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#2979FF"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/InClass08_enter_email"
+        app:layout_constraintStart_toStartOf="@+id/InClass08_enter_email"
+        app:layout_constraintTop_toBottomOf="@+id/InClass08_enter_email" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#009688"
+        android:text="Login"
+        android:textColor="#263238"
+        app:layout_constraintEnd_toEndOf="@+id/InClass08_enter_password"
+        app:layout_constraintStart_toStartOf="@+id/InClass08_enter_password"
+        app:layout_constraintTop_toBottomOf="@+id/InClass08_enter_password" />
+
+    <TextView
+        android:id="@+id/InClass08_register_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Have no account? Register Here:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <Button
+        android:id="@+id/buttonOpenRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="#FF6F00"
+        android:text="Register Now"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        app:layout_constraintEnd_toEndOf="@+id/InClass08_register_reminder"
+        app:layout_constraintStart_toStartOf="@+id/InClass08_register_reminder"
+        app:layout_constraintTop_toBottomOf="@+id/InClass08_register_reminder" />
+</androidx.constraintlayout.widget.ConstraintLayout>
