@@ -12,6 +12,16 @@ public class Chat {
     private String message;
     private boolean isseen;
 
+    private String image_message;
+
+    public Chat(String sender, String receiver, String message, boolean isseen,String image_message) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
+        this.isseen = isseen;
+        this.image_message = image_message;
+    }
+
     public Chat(String sender, String receiver, String message, boolean isseen) {
         this.sender = sender;
         this.receiver = receiver;
@@ -52,5 +62,13 @@ public class Chat {
 
     public void setIsseen(boolean isseen) {
         this.isseen = isseen;
+    }
+
+    public String getImage_message() {
+        return image_message;
+    }
+
+    public void setImage_message(String image_message) {
+        this.image_message = image_message;
     }
 }

@@ -8,6 +8,7 @@ package com.example.cs4520_inclass_ziyang8317.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs4520_inclass_ziyang8317.Activity.InClass09ChatActivity;
 import com.example.cs4520_inclass_ziyang8317.Fragments.ChatFragment;
 import com.example.cs4520_inclass_ziyang8317.Inclass07RegisterFragment;
 import com.example.cs4520_inclass_ziyang8317.R;
@@ -92,10 +94,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
                     bundle.putString("user_to_talk_uid", String.valueOf(uid));
 
 
-                    ChatFragment to_chat = new ChatFragment();
-                    to_chat.setArguments(bundle);
+                    //ChatFragment to_chat = new ChatFragment();
+                    //to_chat.setArguments(bundle);
 
-                    fm.beginTransaction().replace(R.id.fragmentContainerView_InClass8,to_chat,"starting chat").addToBackStack(null).commit();
+                    //fm.beginTransaction().replace(R.id.fragmentContainerView_InClass8,to_chat,"starting chat").addToBackStack(null).commit();
+
+                    Intent i = new Intent(mcontext, InClass09ChatActivity.class);
+                    i.putExtras(bundle);
+                    mcontext.startActivity(i);
+
 
                 }
             });

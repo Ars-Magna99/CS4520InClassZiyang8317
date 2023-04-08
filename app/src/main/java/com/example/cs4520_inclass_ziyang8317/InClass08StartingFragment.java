@@ -7,10 +7,12 @@
 package com.example.cs4520_inclass_ziyang8317;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,8 +21,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.cs4520_inclass_ziyang8317.Activity.InClass09EditProfileActivity;
+import com.example.cs4520_inclass_ziyang8317.Fragments.InClass09EditProfileFragment;
+import com.example.cs4520_inclass_ziyang8317.Fragments.InClass09SelectImgFragment;
 import com.example.cs4520_inclass_ziyang8317.adapter.UserAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -49,11 +56,20 @@ public class InClass08StartingFragment extends Fragment {
 
     private String username;
 
+    private ImageView user_profile_pic;
+
+    private Button button_edit_profile;
+
     private RecyclerView user_list;
     private UserAdapter userAdapter;
     private ArrayList<ReadWriteUserDetails> users;
 
     private TextView curr_username_reminder;
+
+    public InClass08StartingFragment(FirebaseUser user){
+        this.mUser = user;
+    }
+
 
 
 
@@ -99,13 +115,16 @@ public class InClass08StartingFragment extends Fragment {
             db = FirebaseFirestore.getInstance();
             mAuth = FirebaseAuth.getInstance();
             mUser = mAuth.getCurrentUser();
-
-
             readUsers();
 
+        } else {
 
+             db = FirebaseFirestore.getInstance();
+             mAuth = FirebaseAuth.getInstance();
+             mUser = mAuth.getCurrentUser();
+
+            readUsers();
         }
-
 
     }
 
@@ -126,11 +145,13 @@ public class InClass08StartingFragment extends Fragment {
             throw new RuntimeException(context.toString()+ "must implement IaddButtonAction");
         }
     }
+
     @Override
     public void onResume(){
         super.onResume();
         readUsers();
     }
+
 
 
     @Override
@@ -142,6 +163,18 @@ public class InClass08StartingFragment extends Fragment {
         curr_username_reminder = rootView.findViewById(R.id.username_reminder);
 
         log_out_button = rootView.findViewById(R.id.InClass08_logout_button);
+        button_edit_profile = rootView.findViewById(R.id.button_edit_profile);
+        user_profile_pic = rootView.findViewById(R.id.user_profile_pic);
+        button_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //FragmentManager fm = getActivity().getSupportFragmentManager();
+                //fm.beginTransaction().replace(R.id.fragmentContainerView_InClass8,new InClass09EditProfileFragment(),"edit profile").addToBackStack(null).commit();
+                Intent myIntent = new Intent(getActivity(), InClass09EditProfileActivity.class);
+                //myIntent.putExtra("key", value); //Optional parameters
+                getActivity().startActivity(myIntent);
+            }
+        });
 
         log_out_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,10 +184,33 @@ public class InClass08StartingFragment extends Fragment {
         });
 
 
+
+
         user_list = rootView.findViewById(R.id.InClass08_user_list);
         user_list.setLayoutManager(new LinearLayoutManager(getContext()));
         users = new ArrayList<ReadWriteUserDetails>();
-        curr_username_reminder.setText("Welcome to the chat room!");
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Registered Users").child(mUser.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (getActivity() == null) {
+                    return;
+                }
+                //DataSnapshot snap = (DataSnapshot) snapshot.getChildren();
+                ReadWriteUserDetails user = snapshot.getValue(ReadWriteUserDetails.class);
+
+                curr_username_reminder.setText("Username: "+ user.display_name);
+                Glide.with(getContext()).load(user.getImageURL()).into(user_profile_pic);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        //curr_username_reminder.setText("Welcome to the chat room!");
 
         return rootView;
     }

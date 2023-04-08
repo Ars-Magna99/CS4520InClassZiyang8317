@@ -15,7 +15,7 @@
         android:background="@drawable/background_right"
         android:padding="8dp"
         android:text="hello"
-        android:textColor="#fff"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/InClass08_chat_history_user_id"
@@ -31,6 +31,19 @@
         android:text="User"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sent_image_chat"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/InClass08_chat_history_user_id"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/angry" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

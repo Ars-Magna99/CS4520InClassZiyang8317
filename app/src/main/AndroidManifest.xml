@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +17,15 @@
         android:theme="@style/Theme.CS4520_InClass_Ziyang8317"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity.InClass09SelectImgActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.InClass09ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.InClass09EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".InClass08"
             android:exported="false" />

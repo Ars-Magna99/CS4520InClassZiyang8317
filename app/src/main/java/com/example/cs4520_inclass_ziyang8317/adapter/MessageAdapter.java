@@ -12,11 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.cs4520_inclass_ziyang8317.Packages.Chat;
 import com.example.cs4520_inclass_ziyang8317.R;
 import com.example.cs4520_inclass_ziyang8317.ReadWriteUserDetails;
@@ -47,7 +49,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         this.mChat = mChat;
         this.mContext = mContext;
         this.receiver_display_name = chat_user_name;
-
     }
 
     @NonNull
@@ -69,7 +70,17 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         Chat chat = mChat.get(position);
 
-        holder.show_message.setText(chat.getMessage());
+
+
+        //if the image_message exists, means this is an image message.
+        if (chat.getImage_message() != null){
+            Glide.with(mContext).load(chat.getImage_message()).into(holder.image_message);
+            holder.show_message.setVisibility(View.GONE);
+        } else{
+            holder.show_message.setText(chat.getMessage());
+            holder.image_message.setVisibility(View.GONE);
+        }
+
 
 
 
@@ -98,11 +109,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         public TextView show_message;
         public TextView user_display_name;
 
+        public ImageView image_message;
+
         public ViewHolder(View itemView) {
             super(itemView);
 
             show_message = itemView.findViewById(R.id.show_message);
             user_display_name= itemView.findViewById(R.id.InClass08_chat_history_user_id);
+            image_message = itemView.findViewById(R.id.sent_image_chat);
         }
     }
 

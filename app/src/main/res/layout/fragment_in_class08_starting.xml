@@ -5,24 +5,25 @@
     android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InClass08StartingFragment" >
+    android:scrollbarSize="10dp"
+    tools:context=".InClass08StartingFragment">
 
     <Button
         android:id="@+id/InClass08_logout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginEnd="8dp"
         android:text="Log Out"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button_edit_profile" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/InClass08_user_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,9 +34,48 @@
         android:id="@+id/username_reminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Welcome"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="username here"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/InClass08_user_list"
+        app:layout_constraintEnd_toStartOf="@+id/button_edit_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_pic" />
+
+    <Button
+        android:id="@+id/button_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#CDDC39"
+        android:text="Edit Profile"
+        app:layout_constraintBottom_toTopOf="@+id/InClass08_logout_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Welcome to chat room! "
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/user_profile_pic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/angry"
+        android:background="#BEBEBE"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 </androidx.constraintlayout.widget.ConstraintLayout>

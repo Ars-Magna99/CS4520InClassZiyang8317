@@ -1,29 +1,25 @@
 /*
- * CS4520 InClass08
+ * CS4520 InClass09
  * Name: Ziyang Wang
- * Date: 2023-03-27
+ * Date: 2023-04-06
  * */
 
-package com.example.cs4520_inclass_ziyang8317.Fragments;
-
-import android.os.Bundle;
+package com.example.cs4520_inclass_ziyang8317.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cs4520_inclass_ziyang8317.Fragments.InClass09SelectImgFragment;
 import com.example.cs4520_inclass_ziyang8317.Packages.Chat;
 import com.example.cs4520_inclass_ziyang8317.R;
 import com.example.cs4520_inclass_ziyang8317.adapter.MessageAdapter;
@@ -40,12 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ChatFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ChatFragment extends Fragment {
+public class InClass09ChatActivity extends AppCompatActivity {
     private String chat_user_display_name,chat_user_email,chat_uid;
 
     private String TAG = "final";
@@ -63,78 +54,34 @@ public class ChatFragment extends Fragment {
     MessageAdapter messageAdapter;
     List<Chat> mchat;
 
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ChatFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ChatFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ChatFragment newInstance(String param1, String param2) {
-        ChatFragment fragment = new ChatFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+        setContentView(R.layout.activity_in_class09_chat);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_chat, container, false);
+        //bind the components.
+        btn_send = findViewById(R.id.inclass08_chat_btn_send);
+        text_send = findViewById(R.id.inclass08_text_send);
+        Bundle extras = getIntent().getExtras();
 
 
-        btn_send = rootView.findViewById(R.id.inclass08_chat_btn_send);
-        text_send = rootView.findViewById(R.id.inclass08_text_send);
-
-        chat_user_display_name = getArguments().getString("user_to_talk_display_name");
-        chat_user_email = getArguments().getString("user_to_talk_email");
+        chat_user_display_name = extras.getString("user_to_talk_display_name");
+        chat_user_email = extras.getString("user_to_talk_email");
         // chat_uid = uid of the user "you" are talking to.
-        chat_uid = getArguments().getString("user_to_talk_uid");
-
-
-        getActivity().setTitle("Talking to: "+ chat_user_display_name);
+        chat_uid = extras.getString("user_to_talk_uid");
+        setTitle("Talking to: "+ chat_user_display_name);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseDatabase.getInstance().getReference("Registered Users").child(chat_uid);
-        //
-        recyclerView_chat_record = rootView.findViewById(R.id.recyclerView_chat_record);
+
+        recyclerView_chat_record = findViewById(R.id.recyclerView_chat_record);
         recyclerView_chat_record.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(InClass09ChatActivity.this);
         linearLayoutManager.setStackFromEnd(true);
         recyclerView_chat_record.setLayoutManager(linearLayoutManager);
 
 
-        //
         db = FirebaseDatabase.getInstance().getReference("Registered Users").child(chat_uid);
-
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -150,8 +97,6 @@ public class ChatFragment extends Fragment {
             }
         });
 
-
-        //implement the function to send message
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,38 +104,30 @@ public class ChatFragment extends Fragment {
                 String msg = text_send.getText().toString();
                 if (!msg.equals("")){
                     sendMessage(user.getUid(), chat_uid, msg);
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            text_send.setText("");
-                        }
-                    });
+                    text_send.setText("");
                 } else {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getActivity(), "You can't send empty message", Toast.LENGTH_SHORT).show();
-                            text_send.setText("");
 
-                        }
-                    });
+                    Toast.makeText(InClass09ChatActivity.this, "You can't send empty message", Toast.LENGTH_SHORT).show();
+                    text_send.setText("");
+
                 }
             }
         });
 
-
-        // set onclick event for the select image button.
-        btn_img_send = rootView.findViewById(R.id.inclass08_img_btn_send);
+        btn_img_send = findViewById(R.id.inclass08_img_btn_send);
         btn_img_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.beginTransaction().replace(R.id.fragmentContainerView_InClass8,new InClass09SelectImgFragment(),"Select Img").addToBackStack(null).commit();
+                Intent i = new Intent(InClass09ChatActivity.this,InClass09SelectImgActivity.class);
+                Bundle b = new Bundle();
+                b.putString("sender",user.getUid());
+                b.putString("receiver",chat_uid);
+                i.putExtras(b);
+                startActivity(i);
             }
         });
 
 
-        return rootView;
     }
 
     private void sendMessage(String sender,String receiver,String message){
@@ -236,10 +173,10 @@ public class ChatFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 /**
-                if (notify) {
-                    sendNotifiaction(receiver, user.getUsername(), msg);
-                }
-                notify = false;
+                 if (notify) {
+                 sendNotifiaction(receiver, user.getUsername(), msg);
+                 }
+                 notify = false;
                  **/
             }
 
@@ -250,7 +187,6 @@ public class ChatFragment extends Fragment {
         });
 
     }
-
     private void readMesagges(final String myid, final String userid){
         mchat = new ArrayList<>();
 
@@ -266,7 +202,7 @@ public class ChatFragment extends Fragment {
                         mchat.add(chat);
                     }
 
-                    messageAdapter = new MessageAdapter(getContext(), mchat,chat_user_display_name);
+                    messageAdapter = new MessageAdapter(InClass09ChatActivity.this, mchat,chat_user_display_name);
                     recyclerView_chat_record.setAdapter(messageAdapter);
                 }
             }
